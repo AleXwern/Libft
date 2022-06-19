@@ -2,3 +2,4 @@ obj/**
 build/**
 includes/**
 !includes/libft_core.h
+.vscode
