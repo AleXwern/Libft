@@ -6,7 +6,7 @@
 /*   By: AleXwern <AleXwern@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 11:50:15 by anystrom          #+#    #+#             */
-/*   Updated: 2022/06/12 00:46:18 by AleXwern         ###   ########.fr       */
+/*   Updated: 2022/06/19 23:15:16 by AleXwern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,13 @@
 extern "C" {
 #endif
 
-# include <string.h>
-# include <unistd.h>
-# include <stdlib.h>
+# ifndef ONLY_LIBFT
+#  include <string.h>
+#  include <unistd.h>
+#  include <stdlib.h>
+# else
+#  include "libft_sc.h"
+# endif
 
 /*
 **	Macros to fulfill spesific UNIX/Windows standards.
@@ -41,6 +45,9 @@ typedef unsigned short	t_uint16;
 typedef unsigned char	t_uint8;
 # else
 #  error "System is of odd architechture. Stuff would break anyway."
+# endif
+# ifdef ONLY_LIBFT
+#  include "ft_malloc.h"
 # endif
 
 # define BUFF_SIZE		32
@@ -114,6 +121,8 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_putnbrln(int n);
 void	ft_putstr(char const *s);
 void	ft_putstr_fd(const char *s, int fd);
+void	ft_putulong(t_uint64 n);
+void	ft_putulongln(t_uint64 n);
 void	*ft_realloc(void *ptr, size_t size, size_t len);
 void	ft_splitfree(char **c);
 void	ft_strclr(char *s);
