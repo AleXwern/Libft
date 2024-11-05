@@ -6,7 +6,7 @@
 #    By: AleXwern <AleXwern@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/11 23:38:19 by AleXwern          #+#    #+#              #
-#    Updated: 2024/11/05 18:26:06 by AleXwern         ###   ########.fr        #
+#    Updated: 2024/11/05 19:19:15 by AleXwern         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,7 @@ everything: libftall
 	@echo "Building $(PURPLE)Libft$(STOP) libraries"
 	@mkdir -p build
 	@cp libftc/libft.a build
+	@cp Libft_ASM/includes/* includes
 	@cp libftc/includes/* includes
 	@cp libax/libax.a build
 	@cp libax/includes/* includes
