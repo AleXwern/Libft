@@ -6,12 +6,12 @@
 #    By: AleXwern <AleXwern@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/30 16:09:13 by anystrom          #+#    #+#              #
-#    Updated: 2022/06/19 23:16:36 by AleXwern         ###   ########.fr        #
+#    Updated: 2024/10/30 19:56:37 by AleXwern         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= libft.a
-FLAG	= -m64 -no-pie -Wall -Wextra -Werror -nostdlib -DONLY_LIBFT
+FLAG	= -m64 -no-pie -Wall -Wextra -Werror -nostdlib
 SRC		= ft_memalloc.c ft_putendl.c ft_strcpy.c ft_strmapi.c ft_strsub.c \
 		ft_memccpy.c ft_putendl_fd.c ft_strdel.c ft_strncat.c ft_strtrim.c \
 		ft_atoi.c ft_memchr.c ft_putnbr.c ft_strdup.c ft_strncmp.c \

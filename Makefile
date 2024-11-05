@@ -6,13 +6,13 @@
 #    By: AleXwern <AleXwern@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/11 23:38:19 by AleXwern          #+#    #+#              #
-#    Updated: 2022/06/12 01:20:58 by AleXwern         ###   ########.fr        #
+#    Updated: 2024/11/05 18:26:06 by AleXwern         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= libft.a
 FLAG	= -m64 -no-pie -Wall -Wextra -Werror
-SRC		= wordwrap_test.cpp romannumerals_test.cpp primefactors_test.cpp
+SRC		= 
 TEST	= $(addprefix ./build/,$(TESTS))
 OBJ		= $(addprefix ./obj/,$(SRC:.c=.o))
 LIBFT	= Libft_ASM.a
@@ -34,11 +34,16 @@ all: $(NAME)
 libft:
 	@make -C libft_asm objonly
 	@make -C libftc
+	@make -C libgfx
+
+libftall:
+	@make -C libft_asm objonly
+	@make -C libftc
 	@make -C ft_malloc
 	@make -C libax
 	@make -C libgfx
 
-$(NAME): libft
+everything: libftall
 	@echo "Building $(PURPLE)Libft$(STOP) libraries"
 	@mkdir -p build
 	@cp libftc/libft.a build
@@ -49,6 +54,14 @@ $(NAME): libft
 	@cp libgfx/includes/* includes
 	@cp ft_malloc/libft_malloc.so build
 	@cp ft_malloc/includes/* includes
+
+$(NAME): libft
+	@echo "Building $(PURPLE)Libft$(STOP) libraries"
+	@mkdir -p build
+	@cp libftc/libft.a build
+	@cp libftc/includes/* includes
+	@cp libgfx/libgfx.a build
+	@cp libgfx/includes/* includes
 
 clean:
 	@/bin/rm -rf ./obj
